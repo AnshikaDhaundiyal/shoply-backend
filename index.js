@@ -41,6 +41,10 @@ mongoose
     autoIndex: false,
   })
   .then(() => {
+    // ✅ Call insert checks here AFTER DB is connected
+    checkProducts();
+    checkUsers();
+
     app.listen(PORT, () => {
       console.log(`✅ Server is running on port ${PORT} and connected to MongoDB`);
     });
@@ -49,6 +53,4 @@ mongoose
     console.error("❌ MongoDB Connection Failed:", err);
   });
 
-// One-time initialization checks
-checkProducts();
-checkUsers();
+  
