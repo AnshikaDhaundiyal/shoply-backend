@@ -99,13 +99,25 @@ exports.products = [
   },
 ];
 
+const bcrypt = require("bcryptjs");
+
 exports.users = [
   {
     username: "Admin User",
     email: "admin@example.com",
-    password: "Admin@54321",
+    password: bcrypt.hashSync("Admin@54321", 10),  // Hashed password
     isAdmin: true,
   },
+  // Add other users here...
+// ];
+
+// exports.users = [
+//   {
+//     username: "Admin User",
+//     email: "admin@example.com",
+//     password: "Admin@54321",
+//     isAdmin: true,
+//   },
   {
     username: "John Smith",
     email: "john@example.com",
