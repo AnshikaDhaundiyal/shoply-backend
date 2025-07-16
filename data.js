@@ -105,9 +105,17 @@ exports.users = [
   {
     username: "Admin User",
     email: "admin@example.com",
-    password: bcrypt.hashSync("Admin@54321", 10),  // Hashed password
+    password: bcrypt.hashSync("Admin@54321", 10),  // ✅ hashed
     isAdmin: true,
   },
+  {
+    username: "John Smith",
+    email: "john@example.com",
+    password: bcrypt.hashSync("John@54321", 10),   // ✅ also hashed
+    isAdmin: false,
+  },
+];
+
   // Add other users here...
 // ];
 
@@ -118,10 +126,4 @@ exports.users = [
 //     password: "Admin@54321",
 //     isAdmin: true,
 //   },
-  {
-    username: "John Smith",
-    email: "john@example.com",
-    password: "John@54321",
-    isAdmin: false,
-  },
-];
+  
